@@ -24,11 +24,4 @@ public class Cartao {
         return email;
     }
 
-    @Override
-    public String toString() {
-        return "Cartao{" +
-                "id='" + id + '\'' +
-                ", email='" + email + '\'' +
-                '}';
-    }
 }

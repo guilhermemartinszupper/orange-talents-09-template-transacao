@@ -37,30 +37,4 @@ public class TransacaoMessage {
     public LocalDateTime getEfetivadaEm() {
         return efetivadaEm;
     }
-
-    public void setId(String id) {
-        this.id = id;
-    }
-
-    public void setEstabelecimento(Estabelecimento estabelecimento) {
-        this.estabelecimento = estabelecimento;
-    }
-
-    public void setCartao(Cartao cartao) {
-        this.cartao = cartao;
-    }
-
-    public void setEfetivadaEm(LocalDateTime efetivadaEm) {
-        this.efetivadaEm = efetivadaEm;
-    }
-
-    @Override
-    public String toString() {
-        return "TransacaoMessage{" +
-                "id='" + id + '\'' +
-                ", estabelecimento=" + estabelecimento +
-                ", cartao=" + cartao +
-                ", efetivadaEm=" + efetivadaEm +
-                '}';
-    }
 }

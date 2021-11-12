@@ -31,12 +31,4 @@ public class Estabelecimento {
         return endereco;
     }
 
-    @Override
-    public String toString() {
-        return "Estabelecimento{" +
-                "nome='" + nome + '\'' +
-                ", cidade='" + cidade + '\'' +
-                ", endereco='" + endereco + '\'' +
-                '}';
-    }
 }

@@ -10,14 +10,15 @@ import java.time.LocalDateTime;
 @Entity
 public class Transacao {
     @Id @GeneratedValue(strategy = GenerationType.IDENTITY)
-    private Long id;
+    private Long idDb;
     private String idTransacao;
     @Embedded
     private Estabelecimento estabelecimento;
     @AttributeOverrides(
             @AttributeOverride(name = "id",
-                    column = @Column(name = "iCartao"))
-    )@Embedded
+                    column = @Column(name = "id_cartao"))
+    )
+    @Embedded
     private Cartao cartao;
     private LocalDateTime efetivadaEm;
 
@@ -32,8 +33,8 @@ public class Transacao {
         this.efetivadaEm = transacaoMessage.getEfetivadaEm();
     }
 
-    public Long getId() {
-        return id;
+    public Long getIdDb() {
+        return idDb;
     }
 
     public String getIdTransacao() {
