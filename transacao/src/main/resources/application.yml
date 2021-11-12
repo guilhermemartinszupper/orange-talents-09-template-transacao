@@ -12,10 +12,10 @@ spring:
     topic:
       transactions: ${KAFKA_TOPIC:transacoes}
   datasource:
-    username: root
-    url: ${BANCO_DADOS:jdbc:mysql://localhost:3306/transacoes}
+    username: ${DBUSERNAME:root}
+    password: ${DBPASSWD:password}
+    url: ${MYSQL_URL:jdbc:mysql://localhost:3306/transacoes}
     testWhileIdle: 'true'
-    password: password
   jpa:
     properties:
       hibernate:
@@ -23,5 +23,13 @@ spring:
     hibernate:
       ddl-auto: update
     show-sql: 'true'
+  security:
+    oauth2:
+      resourceserver:
+        jwt:
+          issuer-uri: ${KEYCLOAK_ISSUER_URI:http://localhost:18080/auth/realms/transacaorealm}
+          jwk-set-uri: ${KEYCLOAK_JWKS_URI:http://localhost:18080/auth/realms/transacaorealm/protocol/openid-connect/certs}
+  profiles:
+    active: ${SPRING_PROFILES_ACTIVE:dev}
 server:
-  port : 8081
+  port : ${PORT:8081}
